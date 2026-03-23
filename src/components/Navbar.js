@@ -11,7 +11,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className={styles.contactAndUser}>
+      <div className={styles.contactCenter}>
         <div className={styles.contactWrapper}>
           <div className={styles.status}>
             <span className={styles.bigNum}>24</span>
@@ -20,16 +20,16 @@ export default function Navbar() {
           </div>
           <div className={styles.phone}>+917860663399</div>
         </div>
+      </div>
 
-        <div className={styles.actions}>
-          <div className={styles.actionItem}>
-            <div className={styles.iconDownload}>⬇</div>
-            <span className={styles.actionText}>Download App</span>
-          </div>
-          <div className={styles.actionItem}>
-            <div className={styles.profileIcon}>👤</div>
-            <span className={styles.actionText}>Hi, Ravi</span>
-          </div>
+      <div className={styles.actions}>
+        <div className={styles.actionItem}>
+          <div className={styles.iconDownload}>⬇</div>
+          <span className={styles.actionText}>Download App</span>
+        </div>
+        <div className={styles.actionItem}>
+          <div className={styles.profileIcon}>👤</div>
+          <span className={styles.actionText}>Hi, Ravi</span>
         </div>
       </div>
     </nav>

@@ -6,6 +6,7 @@
   background: white;
   height: 85px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  position: relative;
 }
 
 .logoBadge {
@@ -20,20 +21,22 @@
 
 .navLetteringWhite {
   color: white;
-  font-size: 22px;
-  font-weight: 800;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .navLetteringGreen {
   color: var(--yatri-dark-green);
-  font-size: 22px;
-  font-weight: 800;
+  font-size: 20px;
+  font-weight: 700;
 }
 
-.contactAndUser {
+.contactCenter {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
-  gap: 40px;
 }
 
 .contactWrapper {
@@ -55,8 +58,8 @@
 }
 
 .bigNum {
-  font-size: 22px;
-  font-weight: 800;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .check {
@@ -65,7 +68,7 @@
 }
 
 .phone {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
 }
 
@@ -100,8 +103,8 @@
 }
 
 .actionText {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 500;
   color: #333;
 }
 
@@ -113,11 +116,12 @@
     padding: 15px 20px;
     gap: 15px;
   }
-  .contactAndUser {
+  .contactCenter {
+    position: static;
+    transform: none;
     width: 100%;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    margin: 10px 0;
   }
 }
 

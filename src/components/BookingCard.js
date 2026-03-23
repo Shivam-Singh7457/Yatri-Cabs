@@ -104,7 +104,7 @@ export default function BookingCard() {
               <label>FROM</label>
               <input 
                 type="text" 
-                placeholder="Type City (e.g. Lucknow)" 
+                placeholder="Type City" 
                 value={from} 
                 onChange={handleFromChange} 
                 onFocus={() => fromOptions.length > 0 && setShowFromDropdown(true)}
@@ -124,7 +124,7 @@ export default function BookingCard() {
               <label>TO</label>
               <input 
                 type="text" 
-                placeholder="Type City (e.g. Delhi)" 
+                placeholder="Type City " 
                 value={to} 
                 onChange={handleToChange} 
                 onFocus={() => toOptions.length > 0 && setShowToDropdown(true)}
