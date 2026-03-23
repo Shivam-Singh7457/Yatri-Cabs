@@ -1,0 +1,138 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 60px;
+  background: white;
+  height: 85px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.logoBadge {
+  background: #333;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: 1px solid var(--yatri-dark-green);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.navLetteringWhite {
+  color: white;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.navLetteringGreen {
+  color: var(--yatri-dark-green);
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.contactAndUser {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.contactWrapper {
+  display: flex;
+  align-items: center;
+  background: var(--yatri-dark-green);
+  color: white;
+  border-radius: 30px;
+  padding: 8px 25px;
+  gap: 15px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  border-right: 1px solid rgba(255,255,255,0.3);
+  padding-right: 15px;
+}
+
+.bigNum {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.check {
+  color: #fff;
+  font-weight: bold;
+}
+
+.phone {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  gap: 30px;
+}
+
+.actionItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.iconDownload {
+  font-size: 24px;
+  color: #555;
+}
+
+.profileIcon {
+  background: var(--yatri-dark-green);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.actionText {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Responsive Styles */
+@media (max-width: 860px) {
+  .nav {
+    flex-direction: column;
+    height: auto;
+    padding: 15px 20px;
+    gap: 15px;
+  }
+  .contactAndUser {
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoBadge {
+    padding: 8px 10px;
+  }
+  .navLetteringWhite, .navLetteringGreen {
+    font-size: 18px;
+  }
+  .contactWrapper {
+    display: none; 
+  }
+  .actions {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+}
