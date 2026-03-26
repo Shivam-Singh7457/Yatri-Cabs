@@ -11,6 +11,9 @@ export default function Home() {
       
       {/* Hero Section */}
       <section className={styles.heroSection}>
+        {/* REPLACE src with your hero background image link */}
+        <img src="Road.png" alt="Hero Background" className={styles.heroBg} />
+        <div className={styles.heroOverlay} />
         <div className={styles.heroContainer}>
           <div className={styles.heroText}>
             <h1>
@@ -35,8 +38,10 @@ export default function Home() {
           <div className={styles.infoBoxCenter}>
             <h2>Download Now!</h2>
             <div className={styles.storeLogos}>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className={styles.storeStoreBadge}/>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className={styles.storeStoreBadge}/>
+              {/* REPLACE src with your Google Play badge image link */}
+              <img src="play.png" alt="Google Play" className={styles.storeStoreBadge}/>
+              {/* REPLACE src with your App Store badge image link */}
+              <img src="app_store.png" alt="App Store" className={styles.storeStoreBadge}/>
             </div>
           </div>
           <div className={styles.infoBox}>
@@ -50,17 +55,20 @@ export default function Home() {
       <section className={styles.featuresRow}>
         <div className={styles.featuresContainer}>
           <div className={styles.featureCard}>
-            <div className={styles.featureIconPlaceholder}>M</div>
+            {/* REPLACE src with your hand/return-fare icon image link */}
+            <img src="disc.png" alt="Return Fare Not Fair" className={styles.featureIconImg} />
             <h3 className={styles.featureTitle}>RETURN FARE, NOT FAIR!</h3>
             <p className={styles.featureDesc}>Why Pay For Return Journey When You Are Travelling Oneway? Now Get Discounted AC Taxi At Just Half Of The Round Trip Cost For Your One Way Travel.</p>
           </div>
           <div className={styles.featureCard}>
-            <div className={styles.featureIconPlaceholder}>📍</div>
+            {/* REPLACE src with your GPS/location-pin icon image link */}
+            <img src="gps.png" alt="GPS Based Billing" className={styles.featureIconImg} />
             <h3 className={styles.featureTitle}>GPS BASED BILLING SYSTEM</h3>
             <p className={styles.featureDesc}>Since The GPS Data Captures The Actual Distance And Time Travelled, It Reduce The Chance Of Kilometer Tampering Or Discrepancies In Billing.</p>
           </div>
           <div className={styles.featureCard}>
-            <div className={styles.featureIconPlaceholder}>🚗</div>
+            {/* REPLACE src with your car/routes icon image link */}
+            <img src="driving.svg" alt="Available Routes" className={styles.featureIconImg} />
             <h3 className={styles.featureTitle}>NOW AVAILABLE ROUTES ARE!</h3>
             <p className={styles.featureDesc}>Lucknow | Gorakhpur | Varanasi<br/>| Ayodhya | Allahabad | Bareilly</p>
           </div>
@@ -84,32 +92,37 @@ export default function Home() {
         </div>
         <div className={styles.whyYatriContent}>
           <div className={styles.whyYatriLeft}>
-            <img src="https://imgs.search.brave.com/KeJTqgSZkaw_9X0QFO0O-IHOwY4pIXKEQat46ijLiKY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9tYWRy/aWQtc3BhaW4tYmxh/Y2stdWJlci1jYXIt/YWR2ZXJ0aXNlbWVu/dC10cmFmZmljLXBs/YXphLWRlLWxhLWlu/ZGVwZW5kZW5jaWEt/Mzc3MDIyNjIyLmpw/Zw" alt="Yatri Cab" className={styles.carImg} />
+            {/* REPLACE src with your white sedan / car image link */}
+            <img src="why_yatri.png" alt="Yatri Cab" className={styles.carImg} />
           </div>
           <div className={styles.whyYatriRight}>
             <div className={styles.whyCard}>
-              <div className={styles.whyIcon}>⚡</div>
+              {/* REPLACE src with your fast-response / lightning icon image link */}
+              <img src="bolt.png" alt="Fast Response" className={styles.whyIcon} />
               <div className={styles.whyText}>
                 <h4>FAST RESPONSE TIME</h4>
                 <p>Experience The Best Car Rental Service With Driver For Local Or Outstation Trips. Enjoy Prompt Response Times And Seamless Car Hire Service, Ensuring You Get On The Road Quickly</p>
               </div>
             </div>
             <div className={styles.whyCard}>
-              <div className={styles.whyIcon}>👥</div>
+              {/* REPLACE src with your fleet / group icon image link */}
+              <img src="people.png" alt="Vast Fleet" className={styles.whyIcon} />
               <div className={styles.whyText}>
                 <h4>VAST FLEET</h4>
                 <p>We Offer A Wide Range Of Rental Cars Including Sedans, SUVs, MUVs, Premium Sedans, And Tempo Travellers To Meet All Your Car Hire Needs.</p>
               </div>
             </div>
             <div className={styles.whyCard}>
-              <div className={styles.whyIcon}>📱</div>
+              {/* REPLACE src with your mobile/app icon image link */}
+              <img src="box.png" alt="Easy To Order" className={styles.whyIcon} />
               <div className={styles.whyText}>
                 <h4>EASY TO ORDER</h4>
                 <p>Easily Book A Cab Online Through Our User-Friendly Website, Mobile Application, Or By Calling Our Customer Support Team.</p>
               </div>
             </div>
             <div className={styles.whyCard}>
-              <div className={styles.whyIcon}>💲</div>
+              {/* REPLACE src with your tariff / price-tag icon image link */}
+              <img src="paid.png" alt="Great Tariffs" className={styles.whyIcon} />
               <div className={styles.whyText}>
                 <h4>GREAT TARIFFS</h4>
                 <p>Rent A Car At The Lowest Rates! Our Car Hire Tariffs Are Highly Competitive Compared To Other Operators. Book Online Cabs At The Best Prices With Yatri Car Rental.</p>
@@ -167,7 +180,8 @@ export default function Home() {
             <p>Our Oneway Car Rental Service Is Cheaper Than AC Bus And 2-Tier AC Train Ticket Fares. It Reduces Your Travel Time, And You Travel In Your Own Private Space, Allowing You To Fully Enjoy Your Journey. Our One Way Taxi Will Come To Your Doorstep And Take You To Your Desired Destination. So, Book Your Cheapest One Way Cab From Lucknow To Gorakhpur Or Varanasi To Ayodhya With Our Reliable Oneway Car Rental Service With Driver. Experience The Convenience Of Our Taxi Service, Where You Can Rent A Car Effortlessly And Enjoy Seamless Cab Booking. Choose Our Car Hire Option For A Hassle-Free And Comfortable Travel Experience. We Offer Outstation Cab And Intercity Travel Services, Ensuring A Smooth And Enjoyable Luxury Ride Wherever You Need To Go.</p>
           </div>
           <div className={styles.whyChooseImage}>
-            <img src="https://placehold.co/500x400?text=Phone+Taxi+Illustration" alt="App Booking" className={styles.illustrationImg} />
+            {/* REPLACE src with your phone+taxi illustration image link */}
+            <img src="moving_car.png" alt="App Booking" className={styles.illustrationImg} />
           </div>
         </div>
       </section>
@@ -205,7 +219,7 @@ export default function Home() {
             </ul>
           </div>
           <div className={styles.whyOneWayImage}>
-            <img src="https://placehold.co/400x300?text=Red+Car" alt="Red Car on Road" />
+            <img src="red-car.png" alt="Red Car on Road" />
           </div>
           <div className={styles.whyOneWayList}>
             <ul>
@@ -247,17 +261,17 @@ export default function Home() {
       <section className={styles.threeFeaturesSection}>
         <div className={styles.threeFeaturesContainer}>
           <div className={styles.threeFeatureCard}>
-            <div className={styles.featureIconGraphic}>💸🚗</div>
+            <img src="for-any.png" alt="For Any Budget" className={styles.featureIconGraphic} />
             <h3>For Any Budget</h3>
             <p>Choose From Hatchbacks, Sedans, Mini SUVs, Prime SUVs, And Mini Buses Like Tempo Travellers 12-Seater To 25-Seater To Find A Ride Within Your Budget And At Your Convenience With Our Car Rental And Cab Service Options.</p>
           </div>
           <div className={styles.threeFeatureCard}>
-            <div className={styles.featureIconGraphic}>📍🚗</div>
+            <img src="car_new.png" alt="For Any Distance" className={styles.featureIconGraphic} />
             <h3>For Any Distance</h3>
             <p>Book Daily Rides With Multiple Stops Within The City Or Travel To Your Favourite Destinations Across The Country With Our Oneway Or Round Trip Outstation Cab Service. Enjoy Seamless Cab Booking For All Your Travel Needs.</p>
           </div>
           <div className={styles.threeFeatureCard}>
-            <div className={styles.featureIconGraphic}>📅🚗</div>
+            <img src="car-dur.png" alt="For Any Duration" className={styles.featureIconGraphic} />
             <h3>For Any Duration</h3>
             <p>Plan A Day Out With Our Hourly-Based Packages For Local City Tours Or Book Our Car Rental Services With A Driver For Long Or Multiple-Day Trips. Our Taxi Service Ensures Reliable Transportation Tailored To Your Car Hire Needs.</p>
           </div>
@@ -292,7 +306,11 @@ export default function Home() {
             { name: "Siddharth Vaidya", loc: "Rohini, Delhi", text: "As a frequent business traveler, finding a reliable one-way cab service that doesn't charge for a return journey is crucial. Yatri Cabs delivers exactly that. Their 24/7 support and easy booking process through the app make my life so much simpler. They're my go-to for intercity travel now." }
           ].map((r, i) => (
             <div key={i} className={styles.testimonialCard}>
-              <div className={styles.stars}>★★★★★</div>
+              <div className={styles.stars}>
+                {[...Array(5)].map((_, si) => (
+                  <div key={si} className={styles.starIcon} />
+                ))}
+              </div>
               <p className={styles.testimonialText}>{r.text}</p>
               <div className={styles.testimonialAuthor}>
                 <strong>{r.name}</strong><br/>
@@ -307,8 +325,7 @@ export default function Home() {
       <section className={styles.footerCTASection}>
         <div className={styles.ctaLeft}>
           <div className={styles.ctaPhones}>
-            <img src="https://placehold.co/150x300?text=App" alt="Phone App" className={styles.phoneImg} />
-            <img src="https://placehold.co/150x300?text=App2" alt="Phone App 2" className={styles.phoneImg2} />
+            <img src="app_mob.png" alt="Phone App" className={styles.phoneImg} />
           </div>
           <div className={styles.ctaAppText}>
             <h2>GET YOUR<br/><span className={styles.yatriGreen}>YATRI CABS</span><br/>APP NOW!</h2>
@@ -316,8 +333,10 @@ export default function Home() {
             <div className={styles.ctaDownloadBox}>
               <p>Download Now!</p>
               <div className={styles.storeLogos}>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className={styles.storeStoreBadge}/>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className={styles.storeStoreBadge}/>
+                {/* REPLACE src with your Google Play badge image link */}
+                <img src="play.png" alt="Google Play" className={styles.storeStoreBadge}/>
+                {/* REPLACE src with your App Store badge image link */}
+                <img src="app_store.png" alt="App Store" className={styles.storeStoreBadge}/>
               </div>
             </div>
           </div>

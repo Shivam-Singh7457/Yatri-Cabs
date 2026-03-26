@@ -1,42 +1,41 @@
+
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 60px;
+  padding: 16px 32px;
   background: white;
-  height: 85px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
   position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
-.logoBadge {
-  background: #333;
-  padding: 10px 15px;
-  border-radius: 4px;
-  border: 1px solid var(--yatri-dark-green);
-  display: flex;
-  align-items: center;
-  gap: 5px;
+.navWrapper {
+  width: 100%;
+  background: white;
 }
 
-.navLetteringWhite {
-  color: white;
-  font-size: 20px;
-  font-weight: 700;
+/* Logo */
+.logoImg {
+  width: 200px;
+  height: 65px;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
 }
 
-.navLetteringGreen {
-  color: var(--yatri-dark-green);
-  font-size: 20px;
-  font-weight: 700;
-}
-
+/* Contact Center Pill */
 .contactCenter {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   align-items: center;
+  gap: 16px;
+}
+
+.contactPillImg {
+  width: 480px;
+  height: 64px;
+  object-fit: contain;
+  display: block;
 }
 
 .contactWrapper {
@@ -44,99 +43,225 @@
   align-items: center;
   background: var(--yatri-dark-green);
   color: white;
-  border-radius: 30px;
-  padding: 8px 25px;
-  gap: 15px;
+  border-radius: 16px;
+  padding: 8px 16px;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .status {
   display: flex;
   align-items: center;
   gap: 2px;
-  border-right: 1px solid rgba(255,255,255,0.3);
-  padding-right: 15px;
+  position: relative;
+}
+
+.statusIcon {
+  width: 40px;
+  height: auto;
+}
+
+.statusDot {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 16px;
+  height: 16px;
+  background: var(--yatri-dark-green);
+  border: 4px solid var(--yatri-dark-green);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .bigNum {
+  font-family: var(--font-poppins);
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 800;
+  color: white;
 }
 
-.check {
-  color: #fff;
-  font-weight: bold;
+.clockIcon {
+  width: 20px;
+  height: 20px;
 }
 
-.phone {
-  font-size: 16px;
-  font-weight: 700;
+.phoneWrapper {
+  display: flex;
+  align-items: center;
+  background: var(--yatri-dark-green);
+  border-radius: 16px;
+  padding: 8px 16px;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
+.phoneIcon {
+  width: 20px;
+  height: auto;
+}
+
+.phoneBadge {
+  background: white;
+  color: var(--yatri-dark-green);
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 20px;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.phoneNumber {
+  color: white;
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 18px;
+  margin-left: 8px;
+}
+
+/* Right Actions */
 .actions {
   display: flex;
-  gap: 30px;
+  gap: 24px;
 }
 
 .actionItem {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
   gap: 4px;
+  transition: transform 0.2s;
 }
 
-.iconDownload {
-  font-size: 24px;
-  color: #555;
+.actionItem:hover {
+  transform: scale(1.05);
 }
 
-.profileIcon {
-  background: var(--yatri-dark-green);
-  color: white;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
+.actionIcon {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  display: block;
+}
+
+.profileContainer {
+  width: 60px;
+  height: 60px;
+  background: var(--primary-light);
+  /* border-radius: 16px; */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.profileIconImg {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+  display: block;
 }
 
 .actionText {
-  font-size: 12px;
-  font-weight: 500;
-  color: #333;
+  font-family: var(--body-xs-font-family);
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+  text-align: center;
 }
 
-/* Responsive Styles */
-@media (max-width: 860px) {
-  .nav {
-    flex-direction: column;
-    height: auto;
-    padding: 15px 20px;
-    gap: 15px;
-  }
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.hamburger:hover {
+  background: #f0f0f0;
+}
+
+.hamburgerIcon {
+  width: 24px;
+  height: 24px;
+  color: #000000;
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 0;
+  border-top: 1px solid #e5e5e5;
+  margin-top: 16px;
+}
+
+.mobileMenu.open {
+  display: flex;
+}
+
+.mobileContact {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobileContactPill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--yatri-dark-green);
+  border-radius: 12px;
+  padding: 12px;
+  color: white;
+  font-family: var(--font-poppins);
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.mobileActions {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding-top: 16px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
   .contactCenter {
-    position: static;
-    transform: none;
-    width: 100%;
-    justify-content: center;
-    margin: 10px 0;
+    display: none;
+  }
+
+  .actions {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .mobileMenu {
+    display: none;
+  }
+
+  .mobileMenu.open {
+    display: flex;
   }
 }
 
-@media (max-width: 480px) {
-  .logoBadge {
-    padding: 8px 10px;
+@media (max-width: 640px) {
+  .nav {
+    padding: 12px 16px;
   }
-  .navLetteringWhite, .navLetteringGreen {
-    font-size: 18px;
-  }
-  .contactWrapper {
-    display: none; 
-  }
-  .actions {
-    width: 100%;
-    justify-content: space-evenly;
+
+  .logoImg {
+    width: 120px;
+    height: auto;
   }
 }

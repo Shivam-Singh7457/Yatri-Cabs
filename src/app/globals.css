@@ -1,22 +1,111 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
 :root {
+  /* Anima design tokens */
+  --neutral5-secondary-black: rgba(74, 78, 94, 1);
+  --primaryneutral-0: rgba(255, 255, 255, 1);
+  --accent-purple: rgba(93, 93, 255, 1);
+
+  /* Primary Colors */
+  --primary-background: #216900;
+  --primary-foreground: #ffffff;
+  --primary-light: #38b000;
+  --primary-dark: #4a7336;
+
+  /* Yatri brand colors */
   --yatri-green: #37b300;
-  --yatri-dark-green: #297a0f;
+  --yatri-dark-green: #216900;
   --yatri-bg: #ffffff;
   --text-main: #333333;
-  --text-gray: #666666;
+  --text-gray: #585858;
   --border-light: #e5e5e5;
+
+  /* Accent Colors */
+  --accent-color: #3e66df;
+  --accent-light: #d5f2c8;
+
+  /* Background Colors */
+  --bg-main: #ffffff;
+  --bg-card: #f1efef;
+  --bg-neutral: #f1f1f1;
+  --bg-gray: #d9d9d9;
+  --bg-light: #fafdf9;
+  --bg-content: #f1f2f5;
+
+  /* Text Colors */
+  --text-primary: #000000;
+  --text-secondary: #4a4e5e;
+  --text-muted: #8d97b0;
+  --text-accent: #216900;
+  --text-light: #71756f;
+  --text-neutral: #505050;
+
+  /* Border Colors */
+  --border-primary: #c7c7c7;
+  --border-secondary: #cdcdcd;
+  --border-input: #dbe3ed;
+  --border-success: #38b000;
+
+  /* Footer */
+  --footer-background: #000000;
+
+  /* Stars */
+  --star-background: #3e66df;
+
+  /* Typography tokens from Anima/Figma */
+  --web-label-font-family: "Poppins", Helvetica, sans-serif;
+  --web-label-font-weight: 600;
+  --web-label-font-size: 18px;
+  --web-label-letter-spacing: 0px;
+  --web-label-line-height: 20px;
+  --web-label-font-style: normal;
+
+  --body-xs-font-family: "Inter", Helvetica, sans-serif;
+  --body-xs-font-weight: 400;
+  --body-xs-font-size: 12px;
+  --body-xs-letter-spacing: 0px;
+  --body-xs-line-height: 150%;
+  --body-xs-font-style: normal;
+
+  --web-placeholder-font-family: "Poppins", Helvetica, sans-serif;
+  --web-placeholder-font-weight: 500;
+  --web-placeholder-font-size: 16px;
+  --web-placeholder-letter-spacing: -0.08px;
+  --web-placeholder-line-height: 18px;
+  --web-placeholder-font-style: normal;
+
+  --functional-label-font-family: "Inter", Helvetica, sans-serif;
+  --functional-label-font-weight: 400;
+  --functional-label-font-size: 12px;
+  --functional-label-letter-spacing: -0.5px;
+  --functional-label-line-height: 16px;
+  --functional-label-font-style: normal;
+
+  /* Font families */
+  --font-inter: "Inter", Helvetica, sans-serif;
+  --font-lato: "Lato", Helvetica, sans-serif;
+  --font-manrope: "Manrope", Helvetica, sans-serif;
+  --font-poppins: "Poppins", Helvetica, sans-serif;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', 'Inter', 'Lato', sans-serif;
   background-color: var(--yatri-bg);
   color: var(--text-main);
   overflow-x: hidden;
@@ -28,4 +117,13 @@ h1, h2, h3, h4, h5, h6 {
 
 li {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
 }

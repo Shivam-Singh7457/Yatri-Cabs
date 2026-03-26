@@ -21,8 +21,7 @@ export default function Footer() {
         <div className={styles.darkFooterContent}>
           <div className={styles.footerLogo}>
              <div className={styles.logoBadge}>
-               <span className={styles.navLetteringWhite}>YATRI</span>
-               <span className={styles.navLetteringGreen}>CABS</span>
+               <img src="yatri-logo.svg" alt="Logo" className={styles.logoImg} />
              </div>
           </div>
           

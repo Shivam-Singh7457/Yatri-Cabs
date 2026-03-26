@@ -1,50 +1,61 @@
+
 .footerContainer {
   width: 100%;
 }
 
+/* Operational Cities */
 .operationalSection {
   background: white;
-  padding: 60px 20px;
+  padding: 48px 32px;
 }
 
 .operationalContent {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 25px;
+  gap: 32px;
   flex-wrap: wrap;
 }
 
 .opTitle {
-  font-size: 24px;
+  font-family: var(--font-lato);
+  font-size: 30px;
   font-weight: 700;
-  color: #222;
+  color: #000000;
+  line-height: 36px;
 }
 
 .cityLinks {
   display: flex;
-  gap: 25px;
+  gap: 32px;
   flex-wrap: wrap;
 }
 
 .cityLinks a {
-  font-size: 20px;
-  font-weight: 600;
-  color: #333;
+  font-family: var(--font-lato);
+  font-size: 30px;
+  font-weight: 700;
+  color: #000000;
   text-decoration: underline;
-  text-underline-offset: 6px;
+  text-underline-offset: 4px;
   text-decoration-thickness: 2px;
+  line-height: 36px;
+  transition: color 0.2s;
 }
 
+.cityLinks a:hover {
+  color: var(--yatri-dark-green);
+}
+
+/* Dark Footer */
 .darkFooter {
-  background: #000;
-  padding: 60px 20px 20px;
+  background: var(--footer-background);
+  padding: 48px 32px 24px;
 }
 
 .darkFooterContent {
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -52,77 +63,99 @@
 }
 
 .footerLogo {
-  margin-bottom: 40px;
+  margin-bottom: 32px;
+}
+
+.footerLogoImg {
+  width: 154px;
+  height: auto;
+  border-radius: 6px;
 }
 
 .logoBadge {
   background: transparent;
-  padding: 10px 15px;
+  padding: 8px 14px;
   border-radius: 4px;
-  border: 1px solid var(--yatri-dark-green);
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
 }
 
 .navLetteringWhite {
   color: white;
-  font-size: 22px;
+  font-family: var(--font-poppins);
+  font-size: 20px;
   font-weight: 800;
 }
 
 .navLetteringGreen {
   color: var(--yatri-dark-green);
-  font-size: 22px;
+  font-family: var(--font-poppins);
+  font-size: 20px;
   font-weight: 800;
 }
 
 .footerLinks {
   display: flex;
-  gap: 30px;
-  margin-bottom: 50px;
+  gap: 32px;
+  margin-bottom: 32px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .footerLinks a {
-  color: #ccc;
+  color: white;
   text-decoration: none;
-  font-size: 13px;
-  font-weight: 500;
+  font-family: var(--font-poppins);
+  font-size: 14px;
+  font-weight: 400;
+  transition: color 0.2s;
 }
 
 .footerLinks a:hover {
-  color: white;
+  color: var(--primary-light);
+  text-decoration: underline;
 }
 
 .copyright {
-  color: #777;
+  color: white;
+  font-family: var(--font-poppins);
   font-size: 12px;
-  padding-top: 25px;
-  padding-bottom: 10px;
+  font-weight: 500;
+  padding-top: 24px;
+  padding-bottom: 12px;
   width: 100%;
   text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+/* Responsive */
 @media (max-width: 768px) {
   .operationalSection {
-    padding: 40px 20px;
+    padding: 32px 16px;
     text-align: center;
+  }
+  .operationalContent {
+    justify-content: center;
   }
   .cityLinks {
     justify-content: center;
+    gap: 16px;
   }
   .opTitle {
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    font-size: 24px;
+  }
+  .cityLinks a {
+    font-size: 24px;
   }
   .footerLinks {
-    gap: 15px;
+    gap: 16px;
     flex-direction: column;
     align-items: center;
   }
   .darkFooter {
-    padding: 40px 20px 20px;
+    padding: 32px 16px 20px;
   }
 }

@@ -1,19 +1,42 @@
+/* =============================================
+   page.module.css — Tailwind-accurate styles
+   ============================================= */
+
+/* ── Wrapper ── */
 .wrapper {
   width: 100%;
   overflow-x: hidden;
   background-color: var(--yatri-bg);
 }
 
+/* ══════════════════════════════════════
+   HERO SECTION
+   ══════════════════════════════════════ */
 .heroSection {
   position: relative;
-  min-height: 85vh;
-  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://imgs.search.brave.com/5Hz3F55l29lSKuc3RLaPs2tf-TeS_GQwD1gXTuRuaxg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjAw/NTM1Mjk0NS9waG90/by9sb2NoLXNoaWVs/LXdpdGgtbWlzdC1k/dXJpbmctc3Vucmlz/ZS1pbi13aW50ZXJ0/aW1lLmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz02Z09HTkR6/aVNDSDY3d0VjVElM/UnJPRk5FSWNDbFhQ/MVNuUnRKM2lKZzZz/PQ');
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-bottom: 60px;
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
 }
 
 .heroContainer {
@@ -21,179 +44,250 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0 60px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 48px 16px;
+  position: relative;
+  z-index: 2;
+  gap: 48px;
 }
 
 .heroText {
   color: white;
   flex: 1;
+  max-width: 580px;
   text-align: left;
 }
 
 .heroText h1 {
-  font-size: 54px;
+  font-family: var(--font-poppins);
+  font-size: 47px;
   font-weight: 300;
-  line-height: 1.2;
+  line-height: 57px;
+  letter-spacing: 0.48px;
+  text-transform: uppercase;
   color: white;
 }
 
 .highlight {
-  color: #5bd51e;
-  font-weight: 700;
+  color: #44d103 !important;
+  font-weight: 600;
 }
 
 .formWrapper {
   flex-shrink: 0;
-  margin-top: 20px;
+  align-self: center;
 }
 
-/* Floating Info Section */
+/* ══════════════════════════════════════
+   FLOATING INFO BAR
+   ══════════════════════════════════════ */
 .floatingInfoSection {
+  width: 100%;
+  background-color: transparent;
+  padding: 0 16px;
   position: relative;
-  z-index: 10;
-  margin-top: -50px;
-  display: flex;
-  justify-content: center;
+  z-index: 3;
+  margin-top: -25px;
 }
 
 .floatingInfoContainer {
   display: flex;
-  align-items: stretch;
-  background: #e9e9e9;
-  border-radius: 40px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  max-width: 1100px;
-  width: 90%;
-  overflow: hidden;
-  border: 4px solid #fff;
+  align-items: center;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 20px;
+  gap: 0;
+  border-radius: 30px;
+  background-color: #d9d9d9;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .infoBox, .infoBoxCenter {
   flex: 1;
-  padding: 30px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  padding: 10px 24px;
 }
 
-.infoBox { border-right: 2px solid #ccc; }
-.infoBox:last-child { border-right: none; }
-.infoBoxCenter { border-right: 2px solid #ccc; }
+.infoBox::after, .infoBoxCenter::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 2px;
+  background: rgba(0, 0, 0, 0.3);
+}
+.infoBox:last-child::after,
+.infoBoxCenter:last-child::after { display: none; }
 
 .infoBox h2, .infoBoxCenter h2 {
-  font-size: 30px;
-  font-weight: 700;
-  margin-bottom: 5px;
-  color: #111;
+  font-family: var(--font-poppins);
+  font-size: 41px;
+  font-weight: 600;
+  line-height: 63px;
+  margin-bottom: 4px;
+  color: #000000;
 }
 
 .infoBox p {
-  font-size: 16px;
-  color: #555;
-  font-weight: 500;
+  font-family: var(--font-poppins);
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 33px;
+  color: #000000;
+}
+
+.infoBoxCenter h2 {
+  font-family: var(--font-lato);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 32px;
 }
 
 .storeLogos {
   display: flex;
-  gap: 10px;
+  gap: 16px;
   margin-top: 10px;
 }
 
 .storeStoreBadge {
-  height: 40px;
+  width: 204px;
+  height: auto;
   cursor: pointer;
 }
 
-/* Features Row */
+/* ══════════════════════════════════════
+   FEATURE CARDS (Return Fare / GPS / Routes)
+   ══════════════════════════════════════ */
 .featuresRow {
-  padding: 60px 20px 40px;
+  padding: 60px 16px 40px;
   background: white;
 }
 
 .featuresContainer {
   display: flex;
   justify-content: center;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
+  gap: 0;
 }
 
 .featureCard {
   flex: 1;
-  border-right: 1px solid #ccc;
-  padding: 40px 20px;
+  padding: 40px 32px;
   text-align: center;
   background: white;
-  min-height: 250px;
+  min-height: 260px;
+  position: relative;
 }
-.featureCard:last-child { border-right: none; }
 
-.featureIconPlaceholder {
-  font-size: 45px;
-  color: var(--yatri-dark-green);
-  margin-bottom: 15px;
+.featureCard::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 2px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.featureCard:last-child::after {
+  display: none;
+}
+
+.featureIconImg {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto 24px;
+  display: block;
 }
 
 .featureTitle {
+  font-family: var(--font-poppins);
   color: var(--yatri-dark-green);
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 15px;
+  font-size: 27px;
+  font-weight: 500;
+  line-height: 41px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
 }
 
 .featureDesc {
-  font-size: 14px;
-  color: #444;
-  line-height: 1.6;
-  font-weight: 500;
+  font-family: var(--font-poppins);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 25px;
+  color: #000000;
+  text-transform: capitalize;
 }
 
-/* Intro Section */
+/* ══════════════════════════════════════
+   INTRO SECTION
+   ══════════════════════════════════════ */
 .introSection {
-  padding: 40px 20px;
+  padding: 40px 16px;
   text-align: center;
   background: white;
 }
 
 .introContainer {
-  max-width: 1000px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .introSection h2 {
-  font-size: 24px;
-  font-weight: 700;
-  color: #666;
-  margin-bottom: 20px;
+  font-family: var(--font-poppins);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--text-gray);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  line-height: 36px;
 }
 
 .introSection p {
-  font-size: 15px;
-  color: #777;
-  line-height: 1.6;
-  font-weight: 500;
+  font-family: var(--font-poppins);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  color: var(--text-gray);
+  text-align: center;
+  text-transform: capitalize;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* Why Yatri Section */
+/* ══════════════════════════════════════
+   WHY YATRI SECTION
+   ══════════════════════════════════════ */
 .whyYatriSection {
-  padding: 60px 20px;
+  padding: 60px 16px;
   background: white;
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
 .whyYatriTitleBox {
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 32px;
 }
 
 .whyYatriTitle {
-  padding: 10px 40px;
-  font-size: 50px;
-  font-weight: 700;
-  color: #666;
+  font-family: var(--font-poppins);
+  font-size: 60px;
+  font-weight: 800;
+  color: var(--text-gray);
+  line-height: 90px;
+  text-transform: uppercase;
 }
 
 .yatriGreen {
@@ -202,108 +296,131 @@
 
 .whyYatriContent {
   display: flex;
-  gap: 40px;
-  align-items: center;
+  gap: 48px;
+  align-items: flex-start;
 }
 
 .whyYatriLeft {
-  flex: 1;
+  flex: 0 0 33.333%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  position: relative;
 }
 
 .carImg {
   width: 100%;
-  max-width: 500px;
   height: auto;
+  border-radius: 8px;
+}
+
+.carOverlayLogo {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  width: 111px;
+  height: auto;
+  border-radius: 6px;
 }
 
 .whyYatriRight {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 24px;
 }
 
 .whyCard {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   align-items: flex-start;
 }
 
 .whyIcon {
-  font-size: 36px;
-  color: #666;
+  width: 42px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin-top: 8px;
 }
 
 .whyText h4 {
-  font-size: 16px;
+  font-family: var(--font-poppins);
+  font-size: 20px;
   color: var(--yatri-dark-green);
   margin-bottom: 8px;
-  font-weight: 700;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 30px;
 }
 
 .whyText p {
-  font-size: 14px;
-  color: #777;
-  line-height: 1.5;
-  font-weight: 500;
+  font-family: var(--font-poppins);
+  font-size: 16px;
+  color: var(--text-gray);
+  line-height: 24px;
+  font-weight: 400;
+  text-transform: capitalize;
 }
 
-/* Table Section */
-/* .tableSection {
-  padding: 40px 20px;
+/* ══════════════════════════════════════
+   TABLE SECTION
+   ══════════════════════════════════════ */
+.tableSection {
+  padding: 30px 16px;
   background: white;
-} */
+}
 
 .tableContainer {
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
+  overflow-x: auto;
 }
 
 .fareTable {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 10px 0;
+  min-width: 800px;
 }
 
 .fareTable th {
-  background: #467336;
+  background: var(--yatri-dark-green);
   color: white;
-  padding: 20px;
-  text-align: left;
-  font-size: 18px;
+  padding: 14px 24px;
+  text-align: center;
+  font-family: var(--font-poppins);
+  font-size: 20px;
   font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 8px 8px 0 0;
 }
-.fareTable th:first-child { background: #3c652b; }
 
 .fareTable td {
-  padding: 20px;
-  border-right: 4px solid white;
-  /* border-bottom: 4px solid white; */
-  background: #dbf1cc;
-  color: #444;
-  font-weight: 500;
-  font-size: 14px;
+  padding: 12px 24px;
+  background: #d5f2c8;
+  color: var(--text-gray);
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 18px;
+  text-align: left;
+  border-bottom: 2px solid white;
 }
 
-.fareTable tr td:nth-child(1), .fareTable tr td:nth-child(3) {
-  background: #d0f0bd;
-}
-
-
-/* Why Choose Bus/Train */
+/* ══════════════════════════════════════
+   WHY CHOOSE BUS/TRAIN Section
+   ══════════════════════════════════════ */
 .whyChooseSection {
-  padding: 60px 20px;
+  padding: 48px 16px;
   background: white;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .whyChooseContainer {
   display: flex;
-  gap: 50px;
-  align-items: center;
+  gap: 48px;
+  align-items: flex-start;
 }
 
 .whyChooseText {
@@ -311,18 +428,22 @@
 }
 
 .whyChooseText h2 {
-  font-size: 28px;
-  color: #555;
-  margin-bottom: 25px;
-  font-weight: 700;
-  line-height: 1.3;
+  font-family: var(--font-poppins);
+  font-size: 36px;
+  color: var(--text-gray);
+  margin-bottom: 24px;
+  font-weight: 800;
+  line-height: 53px;
+  text-transform: uppercase;
 }
 
 .whyChooseText p {
-  font-size: 15px;
-  color: #666;
-  line-height: 1.8;
-  font-weight: 500;
+  font-family: var(--font-poppins);
+  font-size: 20px;
+  color: var(--text-gray);
+  line-height: 30px;
+  font-weight: 400;
+  text-transform: capitalize;
 }
 
 .whyChooseImage {
@@ -334,104 +455,121 @@
 .illustrationImg {
   max-width: 100%;
   height: auto;
+  border-radius: 8px;
 }
 
-/* Bottom Banner */
+/* ══════════════════════════════════════
+   BOTTOM BANNER (Car Rental in India)
+   ══════════════════════════════════════ */
 .bottomBannerSection {
-  padding: 40px 20px 80px;
+  padding: 48px 16px;
   background: white;
 }
 
 .bottomBannerContainer {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .greenBannerTitle {
   background: var(--yatri-dark-green);
   color: white;
-  padding: 20px 30px;
+  padding: 13px 35px;
   border-radius: 8px 8px 0 0;
   text-align: center;
 }
 
 .greenBannerTitle h2 {
-  font-size: 20px;
+  font-family: var(--font-poppins);
+  font-size: 30px;
   font-weight: 700;
   color: white;
   margin: 0;
 }
 
 .bannerContentBox {
-  background: #f4f5f7;
-  padding: 60px;
+  background: var(--bg-content);
+  padding: 32px 40px;
   border-radius: 0 0 8px 8px;
 }
 
 .bannerIntro {
-  font-size: 15px;
-  color: #555;
-  margin-bottom: 25px;
-  font-weight: 500;
+  font-family: var(--font-poppins);
+  font-size: 22px;
+  color: var(--text-gray);
+  margin-bottom: 16px;
+  font-weight: 400;
+  line-height: 30px;
 }
 
 .benefitsList {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
 .benefitsList li {
-  font-size: 15px;
-  color: #666;
-  line-height: 1.6;
+  font-family: var(--font-poppins);
+  font-size: 22px;
+  color: var(--text-gray);
+  line-height: 30px;
+  font-weight: 400;
 }
 
 .benefitsList li strong {
-  color: #444;
+  font-weight: 700;
+  color: var(--text-gray);
 }
 
-/* Why Choose One Way Cab */
+/* ══════════════════════════════════════
+   WHY CHOOSE ONE WAY CAB
+   ══════════════════════════════════════ */
 .whyOneWaySection {
-  padding: 60px 20px;
+  padding: 60px 16px;
   background: white;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .whyOneWayTitle {
   text-align: center;
-  font-size: 63px;
-  font-weight: 700;
-  color: #2f9832;
-  margin-bottom: 50px;
+  font-family: var(--font-poppins);
+  font-size: 64px;
+  font-weight: 600;
+  color: var(--yatri-dark-green);
+  margin-bottom: 48px;
+  line-height: 96px;
+  text-transform: uppercase;
 }
 
 .whyOneWayContent {
   display: flex;
-  gap: 30px;
+  gap: 32px;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 48px;
 }
 
 .whyOneWayList {
   flex: 1;
-  background: #f4f5f7;
-  padding: 30px;
-  border-radius: 12px;
-  border: 1px solid #ddd;
+  background: var(--bg-card);
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--text-gray);
 }
 
 .whyOneWayList ul {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 16px;
 }
 
 .whyOneWayList li {
-  font-size: 14px;
-  color: #333;
-  font-weight: 500;
+  font-family: var(--font-poppins);
+  font-size: 20px;
+  color: #000000;
+  font-weight: 400;
+  text-transform: capitalize;
   display: flex;
   align-items: flex-start;
 }
@@ -453,46 +591,58 @@
 }
 
 .whyOneWayImage img {
-  max-width: 100%;
+  max-width: 428px;
+  width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: 16px;
 }
 
-/* Discover Section */
+/* ══════════════════════════════════════
+   DISCOVER SECTION
+   ══════════════════════════════════════ */
 .discoverSection {
-  padding: 40px 20px;
+  padding: 40px 16px;
   text-align: center;
   background: white;
-  max-width: 1300px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .discoverText {
-  font-size: 28px;
-  color: #777;
-  line-height: 1.6;
+  font-family: var(--font-poppins);
+  font-size: 36px;
+  color: var(--text-light);
+  line-height: 54px;
   font-weight: 400;
   text-transform: uppercase;
 }
 
-/* Exploring Section */
+.discoverText strong {
+  color: var(--yatri-dark-green);
+  font-weight: 600;
+}
+
+/* ══════════════════════════════════════
+   EXPLORING INDIA SECTION
+   ══════════════════════════════════════ */
 .exploringSection {
-  padding: 40px 20px;
+  padding: 48px 16px;
   background: white;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .greenBannerTitleDark {
   background: var(--yatri-dark-green);
   color: white;
-  padding: 20px 30px;
+  padding: 5px 35px;
   border-radius: 8px 8px 0 0;
   text-align: center;
 }
 
 .greenBannerTitleDark h2 {
-  font-size: 26px;
+  font-family: var(--font-poppins);
+  font-size: 30px;
   font-weight: 700;
   color: white;
   margin: 0;
@@ -501,220 +651,269 @@
 }
 
 .bannerContentBoxLight {
-  background: #f4f5f7;
-  padding: 40px;
+  background: var(--bg-content);
+  padding: 32px 40px;
   border-radius: 0 0 8px 8px;
 }
 
 .exploringList {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 .exploringList li {
-  font-size: 15px;
-  color: #666;
-  line-height: 1.6;
-  display: flex;
+  font-family: var(--font-poppins);
+  font-size: 22px;
+  color: var(--text-gray);
+  line-height: 33px;
+  font-weight: 400;
+  text-transform: capitalize;
 }
 
-.exploringList li::before {
-  content: '\2022';
-  color: #666;
-  font-weight: bold;
-  font-size: 20px;
-  margin-right: 10px;
+.exploringList li strong {
+  font-weight: 700;
 }
 
-/* Three features */
+/* ══════════════════════════════════════
+   THREE FEATURES (Budget / Distance / Duration)
+   ══════════════════════════════════════ */
 .threeFeaturesSection {
-  padding: 60px 20px;
+  padding: 48px 16px;
   background: white;
 }
 
 .threeFeaturesContainer {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  max-width: 1200px;
+  gap: 48px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
 .threeFeatureCard {
   flex: 1;
-  text-align: left;
-}
-
-.featureIconGraphic {
-  font-size: 45px;
-  margin-bottom: 20px;
   text-align: center;
 }
 
+.featureIconGraphic {
+  width: 161px;
+  height: 161px;
+  object-fit: contain;
+  margin: 0 auto 24px;
+  display: block;
+  position: relative;
+}
+
+.featureIconOverlay {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
+}
+
 .threeFeatureCard h3 {
-  font-size: 32px;
+  font-family: var(--font-poppins);
+  font-size: 40px;
   font-weight: 700;
-  color: #555;
-  margin-bottom: 15px;
+  color: var(--text-gray);
+  margin-bottom: 16px;
+  text-transform: capitalize;
 }
 
 .threeFeatureCard p {
-  font-size: 16px;
-  color: #666;
-  line-height: 1.8;
-  font-weight: 500;
+  font-family: var(--font-poppins);
+  font-size: 20px;
+  color: var(--text-gray);
+  line-height: 30px;
+  font-weight: 400;
+  text-transform: capitalize;
 }
 
-/* Why Choose Yatri Full */
+/* ══════════════════════════════════════
+   WHY CHOOSE YATRI CAR RENTAL
+   ══════════════════════════════════════ */
 .whyChooseYatriFull {
-  padding: 40px 20px;
+  padding: 48px 16px;
   background: white;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .whyChooseYatriContent {
-  background: #f4f5f7;
-  padding: 40px;
+  background: var(--bg-content);
+  padding: 32px 40px;
   border-radius: 0 0 8px 8px;
 }
 
 .whyChooseYatriList {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
 .whyChooseYatriList li {
-  font-size: 15px;
-  color: #666;
-  line-height: 1.6;
-  display: flex;
-}
-
-.whyChooseYatriList li::before {
-  content: '\2022';
-  color: #666;
-  font-weight: bold;
-  font-size: 20px;
-  margin-right: 10px;
+  font-family: var(--font-poppins);
+  font-size: 22px;
+  color: var(--text-gray);
+  line-height: 33px;
+  font-weight: 400;
+  text-transform: capitalize;
 }
 
 .whyChooseYatriList li strong {
-  color: #444;
+  font-weight: 700;
+  color: var(--text-gray);
 }
 
-/* Testimonials */
+/* ══════════════════════════════════════
+   TESTIMONIALS
+   ══════════════════════════════════════ */
 .testimonialsSection {
-  padding: 60px 20px;
+  padding: 48px 16px;
   background: var(--yatri-dark-green);
   text-align: center;
   color: white;
 }
 
 .testimonialsTitle {
-  font-size: 32px;
+  font-family: var(--font-inter);
+  font-size: 40px;
   font-weight: 700;
   color: white;
-  margin-bottom: 50px;
+  margin-bottom: 48px;
   text-decoration: underline;
   text-underline-offset: 6px;
+  line-height: 49px;
 }
 
 .testimonialsGrid {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
 .testimonialCard {
-  flex: 1;
   background: white;
-  padding: 30px;
+  padding: 24px;
   border-radius: 8px;
   color: #333;
   text-align: left;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 0px 28px 61px rgba(21, 21, 21, 0.15);
 }
 
 .stars {
-  color: #4a90e2; 
-  font-size: 18px;
-  margin-bottom: 15px;
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.starIcon {
+  width: 20px;
+  height: 20px;
+  background: var(--star-background);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
 }
 
 .testimonialText {
-  font-size: 14px;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  font-family: var(--font-inter);
+  font-size: 16px;
+  color: #000000;
+  line-height: 24px;
+  margin-bottom: 24px;
   flex: 1;
+  font-weight: 400;
 }
 
 .testimonialAuthor {
-  font-size: 12px;
-  color: #333;
+  font-family: var(--font-manrope);
+  font-size: 14px;
+  color: #000000;
+}
+
+.testimonialAuthor strong {
+  font-weight: 800;
+  display: block;
+  line-height: 20px;
 }
 
 .testimonialAuthor span {
-  color: #999;
+  color: var(--text-neutral);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
 }
 
-/* Footer CTA */
+/* ══════════════════════════════════════
+   FOOTER CTA (App Download + Driver Partner)
+   ══════════════════════════════════════ */
 .footerCTASection {
-  padding: 80px 20px;
+  padding: 48px 16px;
   background: white;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 48px;
 }
 
 .ctaLeft {
-  flex: 1.2;
+  flex: 1;
   display: flex;
-  align-items: center;
-  gap: 40px;
+  align-items: stretch;
+  gap: 24px;
 }
 
 .ctaPhones {
   display: flex;
-  gap: 15px;
+  gap: 16px;
+  height: 100%;
 }
 
 .phoneImg {
-  width: 140px;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.phoneImg2 {
-  width: 140px;
-  height: auto;
-  margin-top: 40px;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: auto;
+  height: 100%;
+  max-height: 450px;
+  border-radius: 30px;
+  background: var(--bg-light);
+  padding: 16px;
+  position: relative;
+  object-fit: contain;
 }
 
 .ctaAppText h2 {
-  font-size: 30px;
-  font-weight: 700;
-  color: #222;
-  line-height: 1.3;
-  margin-bottom: 15px;
+  font-family: var(--font-poppins);
+  font-size: 40px;
+  font-weight: 600;
+  color: #000000;
+  line-height: 60px;
+  margin-bottom: 16px;
+}
+
+.ctaAppText h2 .yatriGreen {
+  color: #3c9c11;
 }
 
 .ctaCode {
-  font-size: 15px;
-  color: #555;
-  margin-bottom: 20px;
+  font-family: var(--font-poppins);
+  font-size: 20px;
+  color: #000000;
+  margin-bottom: 24px;
+  font-weight: 300;
+  text-transform: uppercase;
+  line-height: 20px;
+}
+
+.ctaCode strong {
+  font-weight: 700;
 }
 
 .ctaDownloadBox {
@@ -723,16 +922,20 @@
 }
 
 .ctaDownloadBox p {
-  font-weight: bold;
-  font-size: 16px;
-  margin-bottom: 10px;
+  font-family: var(--font-lato);
+  font-weight: 700;
+  font-size: 26px;
+  margin-bottom: 16px;
+  text-align: center;
+  color: #000000;
+  line-height: 32px;
 }
 
 .divider {
-  width: 2px;
-  background: #ddd;
-  height: 250px;
-  margin: 0 50px;
+  width: 1px;
+  background: #000000;
+  height: 400px;
+  flex-shrink: 0;
 }
 
 .ctaRight {
@@ -740,99 +943,249 @@
 }
 
 .ctaRight h2 {
-  font-size: 26px;
-  font-weight: 700;
-  color: #222;
-  margin-bottom: 20px;
+  font-family: var(--font-poppins);
+  font-size: 45px;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 32px;
+  text-transform: uppercase;
+  line-height: 55px;
+}
+
+.ctaRight h2 .yatriGreen {
+  color: #3c9c11;
+  font-weight: 800;
 }
 
 .ctaRight p {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 30px;
-  font-weight: 500;
+  font-family: var(--font-poppins);
+  font-size: 25px;
+  color: #000000;
+  line-height: 30px;
+  margin-bottom: 32px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.ctaRight p strong {
+  color: #3c9c11;
+  font-weight: 700;
 }
 
 .downloadAppBtn {
-  background: #467336;
+  background: var(--primary-dark);
   color: white;
-  padding: 15px 40px;
-  font-size: 16px;
-  font-weight: 700;
+  padding: 8px 34px;
+  font-family: var(--font-poppins);
+  font-size: 25px;
+  font-weight: 500;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(70, 115, 54, 0.3);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+  transition: background 0.15s;
+  text-transform: uppercase;
+  display: block;
+  margin: 0 auto;
 }
 
-/* Responsive Styles */
-@media (max-width: 992px) {
+.downloadAppBtn:hover {
+  background: #3a6230;
+}
+
+/* ══════════════════════════════════════
+   OPERATIONAL CITIES (moved from footer)
+   ══════════════════════════════════════ */
+.operationalCities {
+  margin-top: 64px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: center;
+}
+
+.operationalCities .opTitle {
+  font-family: var(--font-lato);
+  font-size: 30px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 36px;
+}
+
+.operationalCities a {
+  font-family: var(--font-lato);
+  font-size: 30px;
+  font-weight: 700;
+  color: #000000;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  line-height: 36px;
+  transition: color 0.2s;
+}
+
+.operationalCities a:hover {
+  color: var(--yatri-dark-green);
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE STYLES
+   ══════════════════════════════════════ */
+@media (max-width: 1024px) {
   .heroContainer {
     flex-direction: column;
     text-align: left;
-    gap: 40px;
+    gap: 32px;
+    padding: 32px 24px;
+  }
+  .heroText {
+    max-width: 100%;
   }
   .heroText h1 {
     font-size: 42px;
+    line-height: 50px;
   }
   .floatingInfoContainer {
     flex-direction: column;
-    width: 90%;
+    gap: 32px;
   }
-  .infoBox, .infoBoxCenter {
-    border-right: none;
-    border-bottom: 2px solid #ccc;
-  }
-  .infoBox:last-child {
-    border-bottom: none;
+  .infoBox::after, .infoBoxCenter::after {
+    display: none;
   }
   .featuresContainer {
     flex-direction: column;
   }
-  .featureCard {
-    border-right: none;
-    border-bottom: 1px solid #ccc;
-  }
   .whyYatriContent, .whyChooseContainer {
     flex-direction: column;
   }
+  .whyYatriLeft {
+    flex: auto;
+  }
   .ctaLeft {
     flex-direction: column;
-  }
-  .divider {
-    width: 100%;
-    height: 2px;
-    margin: 30px 0;
+    align-items: center;
   }
   .footerCTASection {
     flex-direction: column;
+    gap: 40px;
     text-align: center;
-    gap: 50px;
+  }
+  .divider {
+    width: 80%;
+    height: 1px;
+    margin: 0 auto;
+  }
+  .whyOneWayContent {
+    flex-direction: column;
+  }
+  .threeFeaturesContainer {
+    flex-direction: column;
+  }
+  .testimonialsGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
+  .heroContainer {
+    padding: 24px 16px;
+  }
   .heroText h1 {
+    font-size: 35px;
+    line-height: 42px;
+  }
+  .infoBox h2, .infoBoxCenter h2 {
+    font-size: 34px;
+    line-height: 50px;
+  }
+  .infoBox p {
     font-size: 20px;
+    line-height: 30px;
   }
-  .whyOneWayContent {
-    flex-direction: column-reverse;
-  }
-  .threeFeaturesContainer {
-    flex-direction: column;
-    gap: 40px;
-  }
-  .testimonialsGrid {
-    flex-direction: column;
+  .storeStoreBadge {
+    width: 150px;
   }
   .whyYatriTitle {
-    font-size: 22px;
-    padding: 10px 20px;
-    border-width: 2px;
+    font-size: 50px;
+    line-height: 75px;
   }
-  .fareTable th, .fareTable td {
-    padding: 10px;
-    font-size: 13px;
+  .whyOneWayTitle {
+    font-size: 52px;
+    line-height: 80px;
+  }
+  .discoverText {
+    font-size: 30px;
+    line-height: 48px;
+  }
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .ctaRight h2 {
+    font-size: 38px;
+    line-height: 42px;
+  }
+  .ctaAppText h2 {
+    font-size: 35px;
+    line-height: 52px;
+  }
+}
+
+@media (max-width: 640px) {
+  .heroText h1 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+  .infoBox h2, .infoBoxCenter h2 {
+    font-size: 28px;
+    line-height: 42px;
+  }
+  .infoBox p {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .storeStoreBadge {
+    width: 120px;
+  }
+  .whyYatriTitle {
+    font-size: 40px;
+    line-height: 60px;
+  }
+  .whyOneWayTitle {
+    font-size: 40px;
+    line-height: 60px;
+  }
+  .introSection h2 {
+    font-size: 24px;
+  }
+  .discoverText {
+    font-size: 24px;
+    line-height: 42px;
+  }
+  .threeFeatureCard h3 {
+    font-size: 28px;
+  }
+  .threeFeatureCard p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .whyChooseText h2 {
+    font-size: 24px;
+    line-height: 42px;
+  }
+  .greenBannerTitle h2,
+  .greenBannerTitleDark h2 {
+    font-size: 24px;
+  }
+  .bannerIntro,
+  .benefitsList li,
+  .exploringList li,
+  .whyChooseYatriList li {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .operationalCities .opTitle,
+  .operationalCities a {
+    font-size: 24px;
   }
 }
